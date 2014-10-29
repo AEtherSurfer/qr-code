@@ -1,0 +1,29 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+##### Example
+
+    <qr-code></qr-code>
+
+@element qr-code
+@blurb displays a qr code of the given data
+@status [...]
+@homepage https://AEtherSurfer/qr-code
+-->
+
+<polymer-element name="qr-code" attributes="data width height ec">
+  <template>
+    <img src="{{host}}?cht=qr&chs={{width}}x{{height}}&chld={{ec}}&chl={{data}}"></img>
+  </template>
+
+  <script>
+    Polymer({
+      host: "https://chart.googleapis.com/chart",
+      // host: "http://zxing.org/w/chart",
+      data: '',
+      width: "150",
+      height: "150",
+      ec: "L"
+    });
+  </script>
+</polymer-element>

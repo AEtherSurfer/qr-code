@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>qr-code Demo</title>
+
+  <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="qr-code.html">
+  <style>
+    qr-code::shadow img {
+      border: solid;
+    }
+  </style>
+</head>
+
+<body unresolved>
+
+<div>
+  http://itshackademic.com
+</div>
+<div>
+  <qr-code data="http://itshackademic.com"></qr-code>
+</div>
+
+<template is="auto-binding">
+  <div>
+    <textarea placeholder="data" value="{{data}}"></textarea>
+  </div>
+  <div>
+    size <input type="range" min="29" max="547" step="10" value="{{size}}" placeholder="size"></input>
+    <input type="number" min="29" max="547" value="{{size}}" cols="3"></input>
+  </div>
+  <div>
+    ec level <input type="range" min="0" max="3" value="{{eci}}" placeholder="error correction level"></input>
+    <select value="{{ec}}" selectedIndex={{eci}} placeholder="error correction level">
+      <option value="L">L</option>
+      <option value="M">M</option>
+      <option value="Q">Q</option>
+      <option value="H">H</option>
+    </select>
+  </div>
+  <qr-code data="{{data}}" width="{{size}}" height="{{size}}" ec="{{ec}}">
+  </qr-code>
+</template>
+  <script>
+    var t = document.querySelector('template');
+    t.data = "Hello World!";
+  </script>
+</body>
+</html>

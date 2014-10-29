@@ -1,0 +1,15 @@
+{
+  "name": "qr-code",
+  "version": "0.0.1",
+  "description": "qr-code encapsulates a qr code in a web component",
+  "main": "qr-code.html",
+  "keywords": ["Polymer", "web-components", "webcomponents", "qr", "qrcode", "qr-code"],
+  "license": "BSD",
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ]
+}
